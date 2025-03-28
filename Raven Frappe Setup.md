@@ -4,22 +4,22 @@ Creiamo un Bot munito di AI:
 
 Andiamo in basso a sinistra nella sezione settings (icona dell'ingranaggio) e le impostazioni per il bot si trovano in basso a sinistra sotto il campo **AI**
 
-![foto](md.photos/Raven1.png)
+![foto](md.photos/Raven1)
 
 Iniziamo configurando OpenAI in **OpenAI settings**.
 Sono necessari almeno due dati, la **ORG** e la **Api Key**.
 
-![foto](md.photos/Raven2.png)
+![foto](md.photos/Raven2)
 
 Andiamo in **Agents**
 Clicchiamo **create** in alto a destra e provvediamo ad inserire un nome ed una descrizione, ma soprattutto ad attivare il checkbox **Is Ai Agent**.
 La descrizione è indifferente e non offre alcuna funzionalità.
 
-![foto](md.photos/Raven3.png)
+![foto](md.photos/Raven3)
 
 Nella tab **AI** possiamo modificare le funzionalità che avrà il bot a seconda delle nostre esigenze. **Debug mode** è consigliata.
 
-![foto](md.photos/Raven4.png)
+![foto](md.photos/Raven4)
 
 Nella tab **Instructions** si deve inserire il system prompt del chatbot. Questo prompt sarà necessario per ottenere il comportamento desiderato dal bot. Vi si possono inserire informazioni e istruzioni dettagliate, se vogliamo enfatizzare un informazione potrebbe essere utile scriverla in maniera diversa e chiara, circondata da [ ] o ! o in formato lista.
 **Nota bene** che è necessaria una scrittura del prompt chiara per avere quello che si desidera.
@@ -33,7 +33,7 @@ Esempio:
 
 C'è anche la funzionalità **Import from template** che permette di creare prompt template da poter intercambiare rapidamente senza modificarli direttamente. Questa funzione **NON** è AUTOMATIZZABILE!
 
-![foto](md.photos/Raven5.png)
+![foto](md.photos/Raven5)
 
 Nella tab **Functions** si possono aggiungere le funzioni che vengono usate tramite ragionamento della IA e/o tramite specifica istruzione nel prompt. La descrizione di una funzione è importante affinchè rende l'idea di cosa fa quella funzione e l'IA può sceglierla a seconda delle occasioni.
 
@@ -41,7 +41,7 @@ Nella tab **Functions** si possono aggiungere le funzioni che vengono usate tram
 La sezione Functions ci permette di creare funzioni per interagire con **Frappe** e i suoi **DocType**.
 Per crearne una, clicchiamo **create** in alto a destra
 
-![foto](md.photos/Raven6.png)
+![foto](md.photos/Raven6)
 
 ora possiamo scegliere una **Type** per poter decidere cosa fare e come.
 A fianco di Type c'è il campo **Name**. Quando scegliamo il type potrebbe spostarsi e fare spazio a **Reference DocType**,
@@ -78,6 +78,8 @@ Queste due sezioni funzionano nel seguente modo:
 Esempio: "Mostrami tutti gli impiegati dell'azienda di cui appartengo", risulterà disponibile nella chat con il bot in basso a destra, cliccando l'icona della bacchetta o la combinazione di tasti **CTRL + SHIFT + K**
 Può essere dichiarato come globale ovvero accessibile a tutti gli utenti e non richiede l'assegnazione di un ChatBot
 
+![foto](md.photos/Raven7)
+
 ## Raven prompt *(28/03/2025)*
 Sei un chatbot che raccoglie e mostra le liste degli impiegati delle aziende e le relative informazioni. Utilizza i dati più rilevanti, come il nome e la data di assunzione.
 Gestione degli Errori:
@@ -113,7 +115,7 @@ Ecco il metodo per creare il necessario il più velocemente possibile:
 Company:
 Su Frappe, ricercare in alto a destra **Company** e cliccare su **Company List**, dopo di che in alto a destra, cliccare **Add Company** ed inserire i dati.
 
-![foto](md.photos/Frappe1.png)
+![foto](md.photos/Frappe1)
 
 Employee:
 Ricercare **Employee** e cliccare su **Employee List**, dopo di che, cliccare **Add Employee** ed inserire i dati.
@@ -122,7 +124,7 @@ In **Company details - Company** specificare la company d'appartenenza.
 Ora è impiegato dell'azienda selezionata.
 Cliccare in alto a destra **Save** e verrà creato l'employee.
 
-![foto](md.photos/Frappe2.png)
+![foto](md.photos/Frappe2)
 
 Ritornare nella lista employee e cliccare l'employee appena creato.
 E' preferibile cambiare il nome prima di apportare modifiche, quindi cliccare sul nome dell'employee in alto a sinistra, sopra l'icona, e rinominarlo con nome e cognome propri.
