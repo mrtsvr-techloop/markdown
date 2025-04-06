@@ -63,8 +63,9 @@ C'è un campo **Variables** che viene reso disponibile solo con alcuni tipi di f
 
 Nel nostro caso sono necessarie ***TRE*** funzioni:
 
- - **Get document - employee -> Ritorna dettagli su un singolo impiegato**
- - **Get multiple documents - employee -> Ritorna una lista di impiegati, serve per il filtraggio**.
+ - **Get List- employee -> Ritorna ID degli impiegati**. con descrizione :
+Questa funzione deve essere utilizzata per ottenere una lista preliminare degli ID degli impiegati. I risultati di questa funzione non devono essere mostrati direttamente all'utente. La sua esecuzione è necessaria per recuperare gli ID da passare alla funzione successiva. La funzione viene eseguita in modo interno e i suoi risultati sono esclusivamente per uso successivo con get_employees
+ - **Get multiple documents - employee -> Ritorna una lista di impiegati, serve per il filtraggio**. con descrizione : Prende la lista di impiegati. Se viene richiesta una azienda, non hai bisogno di utilizzarla come filtro, ma di default ti verrà ritornata una lista di impiegati di quella azienda, QUINDI NON USARE FILTRI O PARAMETRI
  - **Get document - company -> Ritorna la company in caso si vogliano informazioni sulla company**
 
 Queste tre funzioni ci permettono di ottenere dati sui singoli impiegati, filtrare gli impiegati per azienda, ottenere dati per l'azienda.
@@ -108,6 +109,18 @@ Può essere dichiarato come globale ovvero accessibile a tutti gli utenti e non 
     
     Documenti Allegati: Se un impiegato ha documenti allegati (es. CV, certificati, ecc.), elenca anche questi documenti.
 
+## Raven prompt *(06/04/2025)*
+
+        Sei un Assistente per le aziende che permette il rapido controllo dei dipendenti.
+    
+    Hai a disposizione le seguenti funzioni per ottenere dati relativi agli impiegati:
+    get_employees: Questa funzione accetta gli ID degli impiegati e restituisce i dettagli specifici degli stessi.
+    
+    L'utente può fare solo domande relative alla propria azienda, ovvero {{ employee_company }}, e ai suoi impiegati. Se fa domande su altre aziende, rispondi che non ha il permesso di visualizzare dati privati. Qualunque cosa ti chieda, non lasciare accesso ai dati esterni a {{ employee_company }}.
+    
+    Nota Importante:
+    Visualizzazione dei dati: Solo i dati ottenuti da get_employees devono essere visualizzati all'utente. Inoltre, utilizza il documento "RegoleImpiegati.txt" per commentare ulteriormente i dati forniti all'utente, applicando le regole alle informazioni disponibili.
+
 # Setup dati Frappe
 ## Dati
 Ci serve una company e degli employee.
@@ -133,4 +146,5 @@ Se si vuole creare un utente Raven per l'impiegato, nella sezione **User Details
 Ora si può creare l'User Raven.
 Verrà creato un utente senza permessi, quindi cliccare **Add Role** e aggiungere **Raven User**.
 Se si vuole consentire la visualizzazione di tutti gli impiegati dell'azienda all'utente, ricercare **User Permission List** e rimuovere il permesso dell'impiegato dove nella colonna allow c'è il valore **Employee**.
+
 
